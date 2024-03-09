@@ -11,15 +11,6 @@ export function App2() {
     let [hour, setHour] = useState(0)
 
 
-    const start = <button class="btn" id="start" onClick={startFunc}> Start</button>
-    const stop = <button class="btn" id="stop" onClick={stopFunc}> Stop</button>
-    const reset = (
-            <>
-            <button class="btn" id="reset" onClick={resetFunc}> Reset </button>
-            <button class="btn" id="resume" onClick={resumeFunc}> Resume </button>
-            </>
-        );
-
     function startFunc(){
         setTimer(true); 
         setMode('showStop');
@@ -61,19 +52,15 @@ export function App2() {
             setTimeout(stopWatchProgress, 1000); 
         } 
     }
-
-
-    const renderSwitch = (mode) => {
-        switch(mode) {
-            case 'showStart':
-              return start;
-            case 'showReset':
-              return reset;
-            case 'showStop':
-            return stop;
-            default:
-          }
-    }
+  
+    const start = <button class="btn" id="start" onClick={startFunc}> Start</button>
+    const stop = <button class="btn" id="stop" onClick={stopFunc}> Stop</button>
+    const reset = (
+            <>
+            <button class="btn" id="reset" onClick={resetFunc}> Reset </button>
+            <button class="btn" id="resume" onClick={resumeFunc}> Resume </button>
+            </>
+        );
 
     return (
         <>
@@ -84,7 +71,7 @@ export function App2() {
                 <span class="digit" id="sec">{second}</span> 
             </div> 
             <div className='App3'>
-                {renderSwitch(mode)}
+            {mode === 'showStart'? start: mode === 'showReset'? reset: stop}
             </div>
         </>
     );
