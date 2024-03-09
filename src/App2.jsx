@@ -16,7 +16,7 @@ export function App2() {
         setMode('showStop');
         stopWatchProgress()
     }
-    
+
     function stopFunc(){
         setTimer(false);
         setMode('showReset')
@@ -71,7 +71,7 @@ export function App2() {
                 <span class="digit" id="sec">{second}</span> 
             </div> 
             <div className='App3'>
-            {mode === 'showStart'? start: mode === 'showReset'? reset: stop}
+            {mode === 'showStart'? start: mode === 'showStop'? stop: reset}
             </div>
         </>
     );
