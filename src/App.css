@@ -1,28 +1,24 @@
 .App{
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
   align-items: center; 
 }
 
-.App3{
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 25px;
-}
-
-#time{
-font-size: 45px;
+.DarkMode{
+  color: white;
+  
 }
 
 button {
   display: flex;
   cursor: pointer;
-  background-color: #d93c23;
-  border-radius: 8px;
+  background-color: blue;
+  border-radius: 5px;
   color: white;
   padding: 5px;
-  width: 80px;
-  justify-content: center;
+}
+
+button:hover {
+  background-color: black;
 }
 
