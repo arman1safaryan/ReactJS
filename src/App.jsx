@@ -1,4 +1,4 @@
-import { App2 } from "./App2";
+import { App2 } from "./Components/DarkMode";
 
 const App = () => {
   
